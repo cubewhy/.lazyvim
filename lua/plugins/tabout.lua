@@ -1,3 +1,8 @@
+-- This plugin was disabled since this really breaks something.
+if true then
+  return {}
+end
+
 return {
   {
     "abecodes/tabout.nvim",
