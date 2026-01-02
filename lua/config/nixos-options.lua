@@ -11,14 +11,16 @@ vim.api.nvim_create_autocmd("User", {
       return
     end
 
-    lspconfig.nil_ls.setup({
-      settings = {
-        ["nil"] = {
-          formatting = {
-            command = { "alejandra", "--" },
-          },
-        },
-      },
-    })
+    -- lspconfig.nil_ls.setup({
+    --   settings = {
+    --     ["nil"] = {
+    --       formatting = {
+    --         command = { "alejandra", "--" },
+    --       },
+    --     },
+    --   },
+    -- })
+
+    vim.lsp.enable("nixd")
   end,
 })
