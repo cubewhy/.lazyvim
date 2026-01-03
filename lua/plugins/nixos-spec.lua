@@ -1,9 +1,3 @@
-local utils = require("utils")
-
-if not utils.IsNixOS() then
-  return {}
-end
-
 return {
   {
     "folke/snacks.nvim",

@@ -1,8 +1,6 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-local utils = require("utils")
-
 if vim.g.neovide then
   vim.o.guifont = "JetBrainsMono Nerd Font:h13"
   -- vim.o.guifont = "JetBrainsMono Nerd Font,Noto Color Emoji:h13"
@@ -20,10 +18,35 @@ if vim.g.neovide then
   -- vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "NONE" })
 end
 
-if utils.IsNixOS() then
-  require("config.nixos-options")
-end
-
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.snacks_animate = false
 vim.g.lazyvim_blink_main = false
+
+-- nixos start
+local sqlite_path = os.getenv("LIBSQLITE")
+if sqlite_path then
+  vim.g.sqlite_clib_path = sqlite_path
+end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyDone",
+  callback = function()
+    -- local ok, lspconfig = pcall(require, "lspconfig")
+    -- if not ok then
+    --   return
+    -- end
+
+    -- lspconfig.nil_ls.setup({
+    --   settings = {
+    --     ["nil"] = {
+    --       formatting = {
+    --         command = { "alejandra", "--" },
+    --       },
+    --     },
+    --   },
+    -- })
+
+    vim.lsp.enable("nixd")
+  end,
+})
+-- nixos end
