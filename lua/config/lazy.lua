@@ -20,7 +20,6 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      dir = "~/dev/projects/nvim-plugins/LazyVim-Nix",
     },
     -- import/override with your plugins
     { import = "plugins" },
