@@ -50,7 +50,7 @@ return {
     end,
   },
   {
-    "David-Kunz/gen.nvim",
+    "cubewhy/gen.nvim",
     config = function()
       require("gen").setup({
         model = "qwen2.5-coder:7b", -- The default model to use.
@@ -98,18 +98,5 @@ return {
         },
       })
     end,
-  },
-  {
-    "folke/snacks.nvim",
-    opts = {
-      explorer = {
-        filter = function(cwd, item)
-          if item.buf and not vim.api.nvim_buf_is_valid(item.buf) then
-            return false
-          end
-          return true
-        end,
-      },
-    },
   },
 }
