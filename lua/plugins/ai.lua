@@ -99,4 +99,17 @@ return {
       })
     end,
   },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      explorer = {
+        filter = function(cwd, item)
+          if item.buf and not vim.api.nvim_buf_is_valid(item.buf) then
+            return false
+          end
+          return true
+        end,
+      },
+    },
+  },
 }
