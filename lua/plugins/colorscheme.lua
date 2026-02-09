@@ -5,6 +5,7 @@ return {
       colorscheme = "tokyonight",
     },
   },
+  { "typicode/bg.nvim", lazy = false },
   -- {
   --   "folke/tokyonight.nvim",
   --   opts = {
