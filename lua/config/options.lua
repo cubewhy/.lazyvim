@@ -20,6 +20,7 @@ end
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.snacks_animate = false
 vim.g.lazyvim_blink_main = false
+vim.opt.termguicolors = true
 
 -- nixos start
 local sqlite_path = os.getenv("LIBSQLITE")
