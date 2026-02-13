@@ -22,7 +22,7 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_blink_main = false
 vim.opt.termguicolors = true
 
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars:append("lead:⋅")
 
 -- nixos start
