@@ -22,6 +22,10 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_blink_main = false
 vim.opt.termguicolors = true
 
+vim.opt.list = true
+vim.opt.listchars:append("lead:⋅")
+vim.opt.listchars:append("tab:-> ")
+
 -- nixos start
 local sqlite_path = os.getenv("LIBSQLITE")
 if sqlite_path then
