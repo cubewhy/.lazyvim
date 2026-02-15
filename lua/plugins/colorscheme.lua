@@ -2,9 +2,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "kanagawa",
     },
   },
+  -- { "ellisonleao/gruvbox.nvim" },
+  { "rebelot/kanagawa.nvim" },
   { "typicode/bg.nvim", lazy = false },
   -- {
   --   "folke/tokyonight.nvim",
