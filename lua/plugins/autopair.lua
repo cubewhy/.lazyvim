@@ -127,6 +127,6 @@ return {
     end,
   },
   {
-    "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+    "https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git",
   },
 }
