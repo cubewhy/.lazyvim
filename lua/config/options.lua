@@ -22,8 +22,28 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_blink_main = false
 vim.opt.termguicolors = true
 
-vim.opt.list = false
-vim.opt.listchars:append("lead:⋅")
+-- vim.opt.list = false
+-- vim.opt.listchars:append("lead:⋅")
+
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = ""
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.g.loaded_matchparen = 1
+
+vim.opt.clipboard = ""
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}
 
 -- nixos start
 local sqlite_path = os.getenv("LIBSQLITE")
